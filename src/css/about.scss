@@ -5,16 +5,29 @@
     padding: $xlarge_spacing $large_spacing;
 
     .aboutContainer {
-        max-width: 650px;
+        max-width: 800px;
         margin: auto;
+        display: flex;
+        align-items: center;
 
-        h1 {
+        h2 {
             color: $red;
         }
 
         .selfie {
             display: block;
-            margin: $xlarge_spacing auto;
+            max-width: 200px;
+            margin-right: $large_spacing;
+        }
+
+        @include responsive('<', $desktop) {
+            flex-direction: column;
+
+            .selfie {
+                order: 1;
+                margin-right: 0;
+                margin-top: $large_spacing;
+            }
         }
     }
 }

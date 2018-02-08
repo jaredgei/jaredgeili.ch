@@ -17,7 +17,8 @@ class Cover extends React.Component {
     }
 
     handleScroll(event) {
-        const pageY = event.pageY;
+        const doc = document.documentElement;
+        const pageY = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
         const windowHeight = window.innerHeight;
         const percentScrolled = Math.min(pageY / windowHeight * 1.5, 1);
         const coverOffset = -pageY / 3;
