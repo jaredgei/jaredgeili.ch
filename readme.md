@@ -1,5 +1,5 @@
-# The Stall Wall - the most private chatroom.
-This is a chatroom that only allows one person in a time, reminiscent of writing on a bathroom stall. This app uses express, graphql, and react. Live version visible at [thestallwall.com](http://thestallwall.com/).
+# Personal website
+This is the source for my personal website, visible at [jaredgeili.ch](http://jaredgeili.ch/).
 
 ### Dev
 

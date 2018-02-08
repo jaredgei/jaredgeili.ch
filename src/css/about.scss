@@ -1,0 +1,20 @@
+@import './variables';
+
+.about {
+    background: $white;
+    padding: $xlarge_spacing $large_spacing;
+
+    .aboutContainer {
+        max-width: 650px;
+        margin: auto;
+
+        h1 {
+            color: $red;
+        }
+
+        .selfie {
+            display: block;
+            margin: $xlarge_spacing auto;
+        }
+    }
+}
