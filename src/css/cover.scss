@@ -58,6 +58,17 @@
         }
     }
 
+    .myInfo {
+        @include cover();
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: $large_spacing;
+        margin: 0;
+    }
+
     .city {
         @include cover();
         display: flex;
@@ -65,15 +76,8 @@
         justify-content: flex-end;
         align-items: center;
 
-        .myInfo {
-            font-weight: bold;
-            text-align: center;
-            padding-bottom: $large_spacing;
-            margin: 0;
-        }
-
         .image {
-            width: 100%;
+            width: calc(100% + 2px);
             min-width: 1200px;
         }
 

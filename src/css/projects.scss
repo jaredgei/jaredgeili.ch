@@ -1,74 +1,28 @@
 @import './variables';
 
 .projects {
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-    color: $white;
-    position: relative;
-    padding: $xlarge_spacing * 2 $large_spacing;
-    overflow: hidden;
+    padding: $xlarge_spacing $small_spacing;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
 
-    h2 {
-        text-align: center;
-    }
+    .card {
+        width: 200px;
+        flex-shrink: 0;
+        margin: $small_spacing;
+        border-radius: $standard_border_radius;
+        overflow: hidden;
+        opacity: 0.8;
+        transition: opacity $short_duration, transform $short_duration;
 
-    .icons {
-        font-size: 1.5em;
-        margin-top: $large_spacing;
-        display: flex;
-        justify-content: center;
-
-        a,
-        a:link,
-        a:active,
-        a:visited {
-            margin: $medium_spacing;
-            color: $white;
-            transition: color $short_duration, transform $short_duration;
+        &:hover {
+            opacity: 1;
+            transform: scale(1.05);
         }
 
-        a:hover {
-            color: $red;
-            transform: scale(1.1);
+        img {
+            width: 100%;
         }
-    }
-
-    @keyframes float {
-        from { transform: translateY(0px); }
-        to { transform: translateY(-2000px); }
-    }
-
-    @mixin stars($number, $size, $speed) {
-        $box-shadow: random($number) + px random($number) + px $white;
-        @for $i from 2 through $number {
-            $box-shadow: $box-shadow, random(2000) + px random(2000) + px $white;
-        }
-
-        background: transparent;
-        width: $size;
-        height: $size;
-        box-shadow: $box-shadow;
-        animation: float $speed linear infinite;
-
-        &:after {
-            content: ' ';
-            position: absolute;
-            top: 2000px;
-            background: transparent;
-            width: $size;
-            height: $size;
-            box-shadow: $box-shadow;
-        }
-    }
-
-    .stars1 {
-        @include stars(700, 1px, 50s);
-    }
-
-    .stars2 {
-        @include stars(200, 2px, 100s);
-    }
-
-    .stars3 {
-        @include stars(100, 3px, 150s);
     }
 }

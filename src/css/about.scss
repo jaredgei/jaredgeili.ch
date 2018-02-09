@@ -2,7 +2,7 @@
 
 .about {
     background: $white;
-    padding: $xlarge_spacing $large_spacing;
+    padding: $xlarge_spacing $medium_spacing;
 
     .aboutContainer {
         max-width: 800px;
@@ -18,6 +18,10 @@
             display: block;
             max-width: 200px;
             margin-right: $large_spacing;
+        }
+
+        .description {
+            padding-left: 2px;
         }
 
         @include responsive('<', $desktop) {

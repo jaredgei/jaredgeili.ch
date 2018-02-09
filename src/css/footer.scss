@@ -1,0 +1,9 @@
+@import './variables';
+
+.footer {
+    background: darken($space_blue, 5%);
+    color: rgba(255, 255, 255, 0.6);
+    padding: $large_spacing $small_spacing;
+    font-size: 0.8em;
+    text-align: center;
+}

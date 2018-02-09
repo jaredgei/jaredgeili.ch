@@ -24,27 +24,22 @@ class Cover extends React.Component {
         const doc = document.documentElement;
         const pageY = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
 
-        if (this.state.scrolled && pageY < this.lastPageY && pageY < 150) {
+        if (this.state.scrolled && pageY < 150) {
             return this.setState({
                 scrolled: false
             });
         }
 
         if (!this.state.scrolled && pageY > 0) {
-            if (this.lastPageY && this.lastPageY < pageY) {
-                return;
-            }
-
             return this.setState({
                 scrolled: true
             });
         }
-
-        this.lastPageY = pageY;
     }
 
     render() {
         const extraClasses = this.state.scrolled ? ' scrolled' : '';
+        const infoOffset = window.innerHeight * 3;
         return (
             <div className={'cover' + extraClasses}>
                 <div className='absoluteContainer'>
@@ -54,19 +49,19 @@ class Cover extends React.Component {
                         <div className='sun' />
                         <div className='moon' />
                     </div>
+                    <Parallax
+                        className='myInfo'
+                        offsetYMax={infoOffset + 'px'}
+                        offsetYMin={(-infoOffset / 4) + 'px'}
+                        slowerScrollRate>
+                        <h1>Jared Geilich</h1>
+                        <div>DEVELOPER // DESIGNER // MUSICIAN</div>
+                    </Parallax>
                     <div className='city'>
-                        <Parallax
-                            className='myInfo'
-                            offsetYMax={(window.innerHeight * 1.5) + 'px'}
-                            offsetYMin={'-' + (window.innerHeight * 1.5) + 'px'}
-                            slowerScrollRate>
-                            <h1>Jared Geilich</h1>
-                            <div>DEVELOPER // DESIGNER // MUSICIAN</div>
-                        </Parallax>
                         <Parallax
                             className='image'
                             offsetYMax={40}
-                            offsetYMin={0}
+                            offsetYMin={-10}
                             slowerScrollRate>
                             <img src='images/vector.svg' />
                         </Parallax>
