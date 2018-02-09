@@ -12,7 +12,7 @@ class About extends React.Component {
                         <div>
                             <span>Thanks for checking out my site. I am a 24-year-old developer and designer, currently working as a software engineer at </span>
                             <a href='https://grokker.com'>Grokker</a>
-                            <span>, an online television network specializing in health and wellness. I work primarily with javascript since our stack is built upon Node.js, using React Native for our mobile applications.</span>
+                            <span>, an online television network specializing in health and wellness. I work primarily with javascript, and focus on front-end and mobile development.</span>
                         </div>
                     </div>
                 </div>

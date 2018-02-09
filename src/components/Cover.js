@@ -1,11 +1,15 @@
 import React from 'react';
+import { Parallax } from 'react-scroll-parallax';
 import utils from '../lib/utils';
 import '../css/cover.scss';
 
 class Cover extends React.Component {
     constructor() {
         super();
-        this.handleScrollEvent = utils.debounce(this.handleScroll.bind(this), 12);
+        this.handleScrollEvent = utils.debounce(this.handleScroll.bind(this), 10);
+        this.state = {
+            scrolled: false
+        };
     }
 
     componentDidMount() {
@@ -18,35 +22,54 @@ class Cover extends React.Component {
 
     handleScroll(event) {
         const doc = document.documentElement;
-        const pageY = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
-        const windowHeight = window.innerHeight;
-        const percentScrolled = Math.min(pageY / windowHeight * 1.5, 1);
-        const coverOffset = -pageY / 3;
-        const rotation = percentScrolled * 120;
-        const infoOffset = percentScrolled * -80;
+        const pageY = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
 
-        this.absoluteContainer.style.bottom = coverOffset + 'px';
-        this.nightBackground.style.opacity = percentScrolled;
-        this.sunAndMoon.style.transform = 'rotate(' + rotation + 'deg)';
-        this.myInfo.style.marginBottom = infoOffset + '%';
+        if (this.state.scrolled && pageY < this.lastPageY && pageY < 150) {
+            return this.setState({
+                scrolled: false
+            });
+        }
+
+        if (!this.state.scrolled && pageY > 0) {
+            if (this.lastPageY && this.lastPageY < pageY) {
+                return;
+            }
+
+            return this.setState({
+                scrolled: true
+            });
+        }
+
+        this.lastPageY = pageY;
     }
 
     render() {
+        const extraClasses = this.state.scrolled ? ' scrolled' : '';
         return (
-            <div className='cover'>
-                <div className='absoluteContainer' ref={ ref => this.absoluteContainer = ref }>
+            <div className={'cover' + extraClasses}>
+                <div className='absoluteContainer'>
                     <div className='dayBackground' />
-                    <div className='nightBackground' ref={ ref => this.nightBackground = ref } />
-                    <div className='sunAndMoon' ref={ ref => this.sunAndMoon = ref }>
+                    <div className='nightBackground' />
+                    <div className='sunAndMoon' >
                         <div className='sun' />
                         <div className='moon' />
                     </div>
                     <div className='city'>
-                        <div className='myInfo' ref={ ref => this.myInfo = ref }>
+                        <Parallax
+                            className='myInfo'
+                            offsetYMax={(window.innerHeight * 1.5) + 'px'}
+                            offsetYMin={'-' + (window.innerHeight * 1.5) + 'px'}
+                            slowerScrollRate>
                             <h1>Jared Geilich</h1>
                             <div>DEVELOPER // DESIGNER // MUSICIAN</div>
-                        </div>
-                        <img src='images/vector.svg' />
+                        </Parallax>
+                        <Parallax
+                            className='image'
+                            offsetYMax={40}
+                            offsetYMin={0}
+                            slowerScrollRate>
+                            <img src='images/vector.svg' />
+                        </Parallax>
                     </div>
                 </div>
             </div>

@@ -5,21 +5,26 @@
     position: relative;
     overflow: hidden;
     z-index: -1;
+    margin: 0;
+
+    .parallax-inner {
+        height: 100%;
+    }
 
     .absoluteContainer {
         @include cover();
-        top: 100;
     }
 
     .dayBackground {
         @include cover();
-        background: linear-gradient(to bottom, #85c3ec, #e1d5bb);
+        background: linear-gradient(to bottom, $sky_blue, $sky_grey);
     }
 
     .nightBackground {
         @include cover();
         opacity: 0;
-        background: linear-gradient(to bottom, #163aa8, #bc0b4b);
+        background: linear-gradient(to bottom, $night_blue, $night_purple);
+        transition: opacity $long_duration;
     }
 
     .sunAndMoon {
@@ -30,6 +35,7 @@
         align-items: center;
         padding: $large_spacing 0;
         overflow: hidden;
+        transition: transform $long_duration;
 
         .sun,
         .moon {
@@ -63,10 +69,26 @@
             font-weight: bold;
             text-align: center;
             padding-bottom: $large_spacing;
+            margin: 0;
+        }
+
+        .image {
+            width: 100%;
+            min-width: 1200px;
         }
 
         img {
-            min-width: 1200px;
+            vertical-align: top;
+        }
+    }
+
+    &.scrolled {
+        .nightBackground {
+            opacity: 1;
+        }
+
+        .sunAndMoon {
+            transform: rotate(160deg);
         }
     }
 }
