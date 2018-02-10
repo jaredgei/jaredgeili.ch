@@ -71,18 +71,18 @@
 
     .city {
         @include cover();
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
 
-        .image {
-            width: calc(100% + 2px);
-            min-width: 1200px;
-        }
+        .parallax-inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
 
-        img {
-            vertical-align: top;
+            img {
+                width: calc(100% + 2px);
+                min-width: 1200px;
+                vertical-align: top;
+            }
         }
     }
 

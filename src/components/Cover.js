@@ -57,15 +57,13 @@ class Cover extends React.Component {
                         <h1>Jared Geilich</h1>
                         <div>DEVELOPER // DESIGNER // MUSICIAN</div>
                     </Parallax>
-                    <div className='city'>
-                        <Parallax
-                            className='image'
-                            offsetYMax={40}
-                            offsetYMin={-10}
-                            slowerScrollRate>
-                            <img src='images/vector.svg' />
-                        </Parallax>
-                    </div>
+                    <Parallax
+                        className='city'
+                        offsetYMax={20}
+                        offsetYMin={-20}
+                        slowerScrollRate>
+                        <img src='images/vector.svg' />
+                    </Parallax>
                 </div>
             </div>
         );
