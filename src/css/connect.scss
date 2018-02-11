@@ -19,6 +19,10 @@
         justify-content: center;
         flex-wrap: wrap;
 
+        .iconRow {
+            display: flex;
+        }
+
         a,
         a:link,
         a:active,

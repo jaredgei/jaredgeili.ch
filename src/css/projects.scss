@@ -7,14 +7,19 @@
     align-items: flex-start;
     flex-wrap: wrap;
 
+    .cardRow {
+        display: flex;
+    }
+
     .card {
-        width: 200px;
+        max-width: 200px;
         flex-shrink: 0;
         margin: $small_spacing;
         border-radius: $standard_border_radius;
         overflow: hidden;
         opacity: 0.8;
         transition: opacity $short_duration, transform $short_duration;
+        flex: 1;
 
         &:hover {
             opacity: 1;
