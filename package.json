@@ -11,7 +11,7 @@
   "keywords": [],
   "repository": {},
   "author": "Jared Geilich",
-  "license": "",
+  "license": "UNLICENSED",
   "devDependencies": {
     "babel-core": "^6.8.0",
     "babel-eslint": "^8.2.1",
@@ -42,7 +42,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-hot-loader": "^4.0.0-beta.17",
+    "react-hot-loader": "^4.0.0-beta.22",
     "react-router": "^4.2.0",
     "react-scroll-parallax": "^1.2.1"
   }
