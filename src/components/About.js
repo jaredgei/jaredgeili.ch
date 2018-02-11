@@ -6,7 +6,7 @@ class About extends React.Component {
         return (
             <div className='about'>
                 <div className='aboutContainer'>
-                    <img className="selfie" src='images/me.png' />
+                    <img className="selfie" src='static/images/me.png' />
                     <div>
                         <h2>Hello</h2>
                         <div className='description'>

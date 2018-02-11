@@ -62,7 +62,7 @@ class Cover extends React.Component {
                         offsetYMax={20}
                         offsetYMin={-20}
                         slowerScrollRate>
-                        <img src='images/vector.svg' />
+                        <img src='static/images/vector.svg' />
                     </Parallax>
                 </div>
             </div>

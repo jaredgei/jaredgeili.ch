@@ -43,8 +43,7 @@ if (isProduction) {
     webpackConfig.entry = [Path.join(__dirname, './src/template')];
 } else {
     webpackConfig.entry = [
-        'webpack/hot/dev-server',
-        'webpack-hot-middleware/client?http://localhost:' + port,
+        'webpack-dev-server/client?http://localhost:' + port,
         Path.join(__dirname, './src/template')
     ];
 }
