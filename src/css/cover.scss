@@ -67,6 +67,7 @@
         text-align: center;
         padding-bottom: $large_spacing;
         margin: 0;
+        transition: color $long_duration;
     }
 
     .city {
@@ -93,6 +94,10 @@
 
         .sunAndMoon {
             transform: rotate(160deg);
+        }
+
+        .myInfo {
+            color: $white;
         }
     }
 }
