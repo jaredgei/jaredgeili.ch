@@ -50,6 +50,16 @@ class Cover extends React.Component {
                         <div className='moon' />
                     </div>
                     <Parallax
+                        className='clouds'
+                        offsetYMax={100}
+                        offsetYMin={-100}
+                        slowerScrollRate>
+                        <div className='cloud' />
+                        <div className='cloud' />
+                        <div className='cloud' />
+                        <div className='cloud' />
+                    </Parallax>
+                    <Parallax
                         className='myInfo'
                         offsetYMax={infoOffset + 'px'}
                         offsetYMin={(-infoOffset / 4) + 'px'}

@@ -58,6 +58,71 @@
         }
     }
 
+    .clouds {
+        @include cover();
+
+        @keyframes move {
+            from { left: 100%; }
+            to { left: -200px; }
+        }
+
+        .cloud {
+            width: 200px;
+            height: 60px;
+            background: $white;
+            border-radius: 200px;
+            position: absolute;
+            left: 100%;
+            top: 60px;
+            opacity: 0.6;
+            animation: move 30s linear infinite;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute; 
+                background: $white;
+                width: 100px;
+                height: 80px;
+                position: absolute;
+                top: -15px;
+                left: 10px;
+                border-radius: 100px;
+                transform: rotate(30deg);
+            }
+
+            &:after {
+                width: 120px;
+                height: 120px;
+                top: -55px;
+                left: auto;
+                right: 15px;
+            }
+
+            &:first-child {
+                top: 60%;
+            }
+
+            &:nth-child(2) {
+                top: 30%;
+                transform: scale(0.6);
+                animation-delay: -25s;
+            }
+
+            &:nth-child(3) {
+                top: 40%;
+                transform: scale(0.9);
+                animation-delay: -10s;
+            }
+
+            &:nth-child(4) {
+                top: 60px + $medium_spacing;
+                transform: scale(0.8);
+                animation-delay: -15s;
+            }
+        }
+    }
+
     .myInfo {
         @include cover();
         display: flex;
