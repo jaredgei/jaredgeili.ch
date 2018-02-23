@@ -75,7 +75,7 @@
             left: 100%;
             top: 60px;
             opacity: 0.6;
-            animation: move 30s linear infinite;
+            animation: move 40s linear infinite;
 
             &:before,
             &:after {
@@ -106,19 +106,22 @@
             &:nth-child(2) {
                 top: 30%;
                 transform: scale(0.6);
-                animation-delay: -25s;
+                animation-delay: -20s;
+                animation-duration: 25s;
             }
 
             &:nth-child(3) {
                 top: 40%;
                 transform: scale(0.9);
-                animation-delay: -10s;
+                animation-delay: -16s;
+                animation-duration: 35s;
             }
 
             &:nth-child(4) {
                 top: 60px + $medium_spacing;
                 transform: scale(0.8);
-                animation-delay: -15s;
+                animation-delay: -22s;
+                animation-duration: 30s;
             }
         }
     }
