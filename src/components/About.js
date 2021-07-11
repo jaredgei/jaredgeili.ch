@@ -10,9 +10,9 @@ class About extends React.Component {
                     <div>
                         <h2>Hello</h2>
                         <div className='description'>
-                            <span>Thanks for checking out my site. I am a 25-year-old developer and designer, currently working as a software engineer at </span>
-                            <a href='https://grokker.com'>Grokker</a>
-                            <span>, an online television network specializing in health and wellness. I work primarily with javascript, and focus on front-end and mobile development.</span>
+                            <span>Thanks for checking out my site. I am a 28-year-old developer and designer, currently working as a software engineer at </span>
+                            <a href='https://pilot.ai'>Pilot AI</a>
+                            <span>, an artificial intelligence company that creates computer vision software for embedded devices. I work primarily with javascript, focusing on building node.js and react.js based applications.</span>
                         </div>
                     </div>
                 </div>
